@@ -12,6 +12,7 @@
 ### Creating gitigniore file
 * [GitIgniore file samples](https://github.com/github/gitignore)
 * [Gitigniore example](https://raw.githubusercontent.com/mattlewis92/angular-calendar/master/.gitignore)
+* [VisualStudio.gitignore](https://github.com/Infragistics/IgOutlook-NetCore3/blob/master/.gitignore)
 
 ### A Topology Editor component for Angular 7+
 * [Project struture of angular component](https://github.com/mattlewis92/angular-calendar)
