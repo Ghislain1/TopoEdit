@@ -12,7 +12,11 @@
 * [ All configuration files](https://angular.io/guide/file-structure) in angular description
 
 ### File `package.json` in Action
-* Understand structure of this file [see](https://github.com/mattlewis92/angular-calendar/blob/master/angular.json)
+* Understand structure of this file [see](https://github.com/mattlewis92/angular-calendar/blob/master/package.json)
+    * scripts
+* [Sample 2](https://github.com/sonatype-nexus-community/search-maven-org/blob/master/package.json)
+    * devDependencies
+    * scripts
 * [ All configuration files](https://angular.io/guide/file-structure) in angular description
 
 
