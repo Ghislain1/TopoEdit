@@ -11,6 +11,11 @@
 * By using `ng generate library <name> [options]` [see](https://github.com/mattlewis92/angular-calendar/blob/master/angular.json)
 * [ All configuration files](https://angular.io/guide/file-structure) in angular description
 
+### File `package.json` in Action
+* Understand structure of this file [see](https://github.com/mattlewis92/angular-calendar/blob/master/angular.json)
+* [ All configuration files](https://angular.io/guide/file-structure) in angular description
+
+
 ### Creating solution struture using 2 main projects
 * src folder for 2 main projects
 * aspnet core project webapi with wwwroot
