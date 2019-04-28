@@ -3,7 +3,6 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-
     "demo": {
       "root": "projects/demo/",
       "sourceRoot": "projects/demo/src",
@@ -31,10 +30,12 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [{
-                "replace": "projects/demo/src/environments/environment.ts",
-                "with": "projects/demo/src/environments/environment.prod.ts"
-              }],
+              "fileReplacements": [
+                {
+                  "replace": "projects/demo/src/environments/environment.ts",
+                  "with": "projects/demo/src/environments/environment.prod.ts"
+                }
+              ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -44,11 +45,13 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "budgets": [{
-                "type": "initial",
-                "maximumWarning": "2mb",
-                "maximumError": "5mb"
-              }]
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
             }
           }
         },
@@ -121,6 +124,41 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "projects/demo-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "angular-topo-editor": {
+      "root": "projects/angular-topo-editor",
+      "sourceRoot": "projects/angular-topo-editor/src",
+      "projectType": "library",
+      "prefix": "topo",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/angular-topo-editor/tsconfig.lib.json",
+            "project": "projects/angular-topo-editor/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/angular-topo-editor/src/test.ts",
+            "tsConfig": "projects/angular-topo-editor/tsconfig.spec.json",
+            "karmaConfig": "projects/angular-topo-editor/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/angular-topo-editor/tsconfig.lib.json",
+              "projects/angular-topo-editor/tsconfig.spec.json"
+            ],
             "exclude": [
               "**/node_modules/**"
             ]

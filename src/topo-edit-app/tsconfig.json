@@ -24,6 +24,12 @@
       ],
       "angular-calendar3/*": [
         "dist/angular-calendar3/*"
+      ],
+      "angular-topo-editor": [
+        "dist/angular-topo-editor"
+      ],
+      "angular-topo-editor/*": [
+        "dist/angular-topo-editor/*"
       ]
     }
   }
