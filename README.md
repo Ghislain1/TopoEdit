@@ -3,6 +3,10 @@
 
 ## Inspirations
 
+### Creating  ans consumming customer angular component
+* [Creation angular lib in projects  folder](https://angular.io/cli/generate#library)
+* [Relation beetween application and library in angular](https://github.com/mattlewis92/angular-calendar/tree/master/projects)
+
 ### File `angular.json` in Action
 * By using `ng generate library <name> [options]` [see](https://github.com/mattlewis92/angular-calendar/blob/master/angular.json)
 * [ All configuration files](https://angular.io/guide/file-structure) in angular description
