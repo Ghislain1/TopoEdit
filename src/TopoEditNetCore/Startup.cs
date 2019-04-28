@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json.Serialization;
 
 namespace TopoEditNetCore
 {
@@ -37,9 +38,10 @@ namespace TopoEditNetCore
         // see https://aka.ms/aspnetcore-hsts.
         app.UseHsts();
       }
-
+      app.UseCors("CorsPolicy");
       app.UseHttpsRedirection();
       app.UseMvc();
+      app.UseDefaultFiles(); // so index.html is not required
 
       // catch-all handler for HTML5 client routes - serve index.html
       app.Run(async context =>
@@ -49,15 +51,40 @@ namespace TopoEditNetCore
         if (env.WebRootPath == null)
           throw new InvalidOperationException("wwwroot folder doesn't exist. Please recompile your Angular Project before accessing index.html. API calls will work fine.");
 
-        context.Response.ContentType = "text/html";
-        await context.Response.SendFileAsync(Path.Combine(env.WebRootPath, "index.html"));
+        context.Response.ContentType = "text/HTML";
+        var indexFile = Path.Combine(env.WebRootPath, "index.html");
+        await context.Response.SendFileAsync(indexFile);
       });
     }
 
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
-      services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+      services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+        .AddJsonOptions(opt =>
+        {
+          var resolver = opt.SerializerSettings.ContractResolver;
+          if (resolver != null)
+          {
+            var res = resolver as DefaultContractResolver;
+            res.NamingStrategy = null;
+          }
+
+          opt.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;
+        });
+      // Cors policy is added to controllers via [EnableCors("CorsPolicy")] or .UseCors("CorsPolicy") globally
+      services.AddCors(options =>
+      {
+        options.AddPolicy("CorsPolicy",
+            builder => builder
+                // required if AllowCredentials is set also
+                .SetIsOriginAllowed(s => true)
+                //.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials()
+            );
+      });
     }
   }
 }

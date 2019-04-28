@@ -8,7 +8,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:prod": "ng build --prod",
+    "build:prod": "ng build  --aot --prod",
+    "build:prod2": "ng build  --aot --prod --output-hashing none",
+    "build:asp2": "npm run build:prod2 & npm run clean & npm run copy",
     "build:asp": "npm run build:prod & npm run clean & npm run copy",
     "copy": "xcopy /s /q .\\dist\\*.*  ..\\TopoEditNetCore\\wwwroot\\",
     "clean": "rd /s /q ..\\TopoEditNetCore\\wwwroot\\"

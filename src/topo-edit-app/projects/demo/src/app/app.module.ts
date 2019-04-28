@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { AngularTopoEditorModule } from 'projects/angular-topo-editor/src/lib/angular-topo-editor.module';
+// import { AngularTopoEditorModule } from 'projects/angular-topo-editor/src/lib/angular-topo-editor.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +10,7 @@ import { AngularTopoEditorModule } from 'projects/angular-topo-editor/src/lib/an
   ],
   imports: [
     BrowserModule,
-    AngularTopoEditorModule
+    // AngularTopoEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

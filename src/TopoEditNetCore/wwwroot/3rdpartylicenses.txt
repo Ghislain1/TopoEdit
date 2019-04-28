@@ -32,8 +32,6 @@ MIT
 @angular/platform-browser
 MIT
 
-angular-topo-editor
-
 core-js
 MIT
 Copyright (c) 2014-2019 Denis Pushkarev
