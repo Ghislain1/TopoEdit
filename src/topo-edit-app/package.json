@@ -7,7 +7,11 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:prod": "ng build --prod",
+    "build:asp": "npm run build:prod & npm run clean & npm run copy",
+    "copy": "xcopy /s /q .\\dist\\*.*  ..\\TopoEditNetCore\\wwwroot\\",
+    "clean": "rd /s /q ..\\TopoEditNetCore\\wwwroot\\"
   },
   "private": true,
   "dependencies": {

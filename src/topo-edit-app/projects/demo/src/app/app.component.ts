@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = ' topology editor component for angular 7+';
+
+  currentDate;
+
+  constructor() {
+    this.currentDate = new Date();
+  }
 }

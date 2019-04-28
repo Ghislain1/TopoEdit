@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'topo-angular-topo-editor',
-  template: `
-    <p>
-      angular-topo-editor works!
-    </p>
-  `,
+  // changeDetection: ChangeDetectionStrategy.OnPush,
+  templateUrl: 'angular-topo-editor.component.html',
   styles: []
 })
 export class AngularTopoEditorComponent implements OnInit {
+
+  /** The current view date */
+  @Input() displayDate: Date;
 
   constructor() { }
 
