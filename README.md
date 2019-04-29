@@ -1,7 +1,12 @@
+
 # TopoEdit
 
 
 ## Inspirations
+
+### Implementing **Models** Controllers and Services in AspNet CORE
+* [Models](https://github.com/mosh-hamedani/vega/blob/master/Core/Models/Vehicle.cs) by Mosh
+* [Controllers](https://github.com/mosh-hamedani/vega/tree/master/Controllers) by Mosh
 
 ### Creating  ans consumming customer angular component
 * [Creation angular lib in projects  folder](https://angular.io/cli/generate#library)
