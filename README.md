@@ -4,6 +4,10 @@
 
 ## Inspirations
 
+### HttpClient in Action
+* [Services 1](https://github.com/mosh-hamedani/vega/blob/master/ClientApp/app/services/vehicle.service.ts) by Mosh
+* [Services 2](https://github.com/RickStrahl/AlbumViewerVNext/blob/master/src/AlbumViewerAngular/src/app/albums/albumService.ts) by Rick
+
 ### Implementing **Models** Controllers and Services in AspNet CORE
 * [Models](https://github.com/mosh-hamedani/vega/blob/master/Core/Models/Vehicle.cs) by Mosh
 * [Controllers](https://github.com/mosh-hamedani/vega/tree/master/Controllers) by Mosh
