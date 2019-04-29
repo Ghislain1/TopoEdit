@@ -7,6 +7,9 @@
 ### Implementing **Models** Controllers and Services in AspNet CORE
 * [Models](https://github.com/mosh-hamedani/vega/blob/master/Core/Models/Vehicle.cs) by Mosh
 * [Controllers](https://github.com/mosh-hamedani/vega/tree/master/Controllers) by Mosh
+* [ViewModels](https://github.com/mosh-hamedani/vega/blob/master/Controllers/Resources/VehicleResource.cs) by Mosh
+* [UnitOfWork](https://github.com/mosh-hamedani/vega/blob/master/Persistence/UnitOfWork.cs)
+* [Repository](https://github.com/mosh-hamedani/vega/blob/master/Persistence/VehicleRepository.cs) by Mosh
 
 ### Creating  ans consumming customer angular component
 * [Creation angular lib in projects  folder](https://angular.io/cli/generate#library)
