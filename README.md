@@ -1,10 +1,12 @@
 
+
 # TopoEdit
 
 
 ## Inspirations
 
 ### HttpClient in Action
+* [Best Service Imp](https://github.com/sonatype-nexus-community/search-maven-org/blob/9669186366e1eee8fff3b32b00932ad121cbe06b/src/app/search/search.service.ts) by compaony
 * [Services 1](https://github.com/mosh-hamedani/vega/blob/master/ClientApp/app/services/vehicle.service.ts) by Mosh
 * [Services 2](https://github.com/RickStrahl/AlbumViewerVNext/blob/master/src/AlbumViewerAngular/src/app/albums/albumService.ts) by Rick
 
