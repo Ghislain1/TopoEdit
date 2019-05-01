@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { GojsDashboardComponent } from './components/gojs-dashboard/gojs-dashboard.component';
 import { GojsTableComponent } from './components/gojs-table/gojs-table.component';
 import { DynamicPortsComponent } from './components/dynamic-ports/dynamic-ports.component';
+import { AngularTopoEditorModule } from 'projects/angular-topo-editor/src/public-api';
 
 const gojsRoutes: Routes = [
   {
@@ -30,6 +31,7 @@ const gojsRoutes: Routes = [
   declarations: [GojsDashboardComponent, GojsTableComponent, DynamicPortsComponent],
   imports: [
     CommonModule,
+    AngularTopoEditorModule,
     RouterModule.forChild(gojsRoutes),
   ]
 })
