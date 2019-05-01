@@ -43,6 +43,14 @@ namespace TopoEditNetCore
       app.UseMvc();
       app.UseDefaultFiles(); // so index.html is not required
 
+      app.UseSpa(spa =>
+      {
+        if (env.IsDevelopment())
+        {
+          spa.UseProxyToSpaDevelopmentServer("http://localhost:50001");
+        }
+      });
+
       // catch-all handler for HTML5 client routes - serve index.html
       app.Run(async context =>
       {
