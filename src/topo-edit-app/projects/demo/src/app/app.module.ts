@@ -9,7 +9,7 @@ import { HomeComponent } from './shared/components/home/home.component';
 // import { AngularTopoEditorModule } from 'projects/angular-topo-editor/src/lib/angular-topo-editor.module';
 
 const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: 'app-home', component: HomeComponent },
   { path: 'home/:id', component: LoginComponent },
   {
     path: 'heroes',
