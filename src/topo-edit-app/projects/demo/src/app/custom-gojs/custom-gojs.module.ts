@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { GojsDashboardComponent } from './components/gojs-dashboard/gojs-dashboard.component';
 import { GojsTableComponent } from './components/gojs-table/gojs-table.component';
+import { DynamicPortsComponent } from './components/dynamic-ports/dynamic-ports.component';
 
 const gojsRoutes: Routes = [
   {
@@ -13,6 +14,10 @@ const gojsRoutes: Routes = [
       {
         path: 'app-gojs-table',
         component: GojsTableComponent
+      },
+      {
+        path: 'app-dynamic-ports',
+        component: DynamicPortsComponent
       }
     ]
   },
@@ -22,7 +27,7 @@ const gojsRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [GojsDashboardComponent, GojsTableComponent],
+  declarations: [GojsDashboardComponent, GojsTableComponent, DynamicPortsComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(gojsRoutes),
