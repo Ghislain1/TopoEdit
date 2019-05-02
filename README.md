@@ -5,6 +5,14 @@
 
 ## Inspirations
 
+### RouterModule in Action
+* [RouterModule](https://github.com/mosh-hamedani/vega/blob/master/Core/Models/Vehicle.cs) by Mosh
+* [Router, ActivatedRoute](https://github.com/mosh-hamedani/vega/blob/master/ClientApp/app/components/view-vehicle/view-vehicle.ts) by Mosh
+* [Router, ActivatedRoute, NavigationEnd](https://github.com/sonatype-nexus-community/search-maven-org/blob/20ecac601bbc2cbabd5360815ccfb669bb752b8e/src/app/shared/router-state/router-state-params.service.ts) by Mosh
+* [UnitOfWork](https://github.com/mosh-hamedani/vega/blob/master/Persistence/UnitOfWork.cs)
+* [Repository](https://github.com/mosh-hamedani/vega/blob/master/Persistence/VehicleRepository.cs) by Mosh
+
+
 ### HttpClient in Action
 * [Best Service Imp](https://github.com/sonatype-nexus-community/search-maven-org/blob/9669186366e1eee8fff3b32b00932ad121cbe06b/src/app/search/search.service.ts) by compaony
 * [Services 1](https://github.com/mosh-hamedani/vega/blob/master/ClientApp/app/services/vehicle.service.ts) by Mosh
