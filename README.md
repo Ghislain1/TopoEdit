@@ -5,6 +5,10 @@
 
 ## Inspirations
 
+### Certificate in Action
+* [Mastering by NugetGallery project]( https://github.com/NuGet/NuGetGallery/blob/master/src/NuGetGallery.Core/Certificates/CertificateFile.cs)
+* [How commusing Certificates from Mastering](https://github.com/NuGet/NuGetGallery/blob/73a5c54629056b25b3a59960373e8fef88abff36/src/NuGetGallery/Services/CertificateService.cs)
+
 ### RouterModule in Action
 * [RouterModule](https://github.com/mosh-hamedani/vega/blob/master/Core/Models/Vehicle.cs) by Mosh
 * [Router, ActivatedRoute](https://github.com/mosh-hamedani/vega/blob/master/ClientApp/app/components/view-vehicle/view-vehicle.ts) by Mosh
