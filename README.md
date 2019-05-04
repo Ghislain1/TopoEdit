@@ -4,6 +4,12 @@
 
 
 ## Inspirations
+
+### ASP.Net core **Startup class** in Action 
+* [Asp net core single page app](https://github.com/asadsahi/AspNetCoreSpa/blob/master/src/AspNetCoreSpa.Web/Startup.cs)
+* [Photo displaying](https://github.com/madskristensen/PhotoGallery/blob/master/src/Startup.cs) 
+* [Album viewer](https://github.com/RickStrahl/AlbumViewerVNext/blob/master/src/AlbumViewerNetCore/Startup.cs)
+
 ### C#-World Services in Action
 * [List of useful services](https://github.com/NuGet/NuGetGallery/tree/9f578da47bbb8d6c83112512e3ec5c6a715629b6/src/NuGetGallery/Services) powered by **Microsoft**
 
