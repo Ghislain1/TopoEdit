@@ -4,6 +4,8 @@
 
 
 ## Inspirations
+### C#-World Services in Action
+* [List of useful services](https://github.com/NuGet/NuGetGallery/tree/9f578da47bbb8d6c83112512e3ec5c6a715629b6/src/NuGetGallery/Services) powered by **Microsoft**
 
 ### Certificate in Action
 * [Mastering by NugetGallery project]( https://github.com/NuGet/NuGetGallery/blob/master/src/NuGetGallery.Core/Certificates/CertificateFile.cs)
