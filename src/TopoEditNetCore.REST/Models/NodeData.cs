@@ -8,21 +8,31 @@ namespace TopoEditNetCore.REST.Models
   {
     public NodeData()
     {
-      this.LeftArray = new Collection<TopologyDevicePort>();
-      this.BottomtArray = new Collection<TopologyDevicePort>();
-      this.RightArray = new Collection<TopologyDevicePort>();
-      this.TopArray = new Collection<TopologyDevicePort>();
+      this.LeftPorts = new Collection<TopologyDevicePort>();
+      this.BottomPorts = new Collection<TopologyDevicePort>();
+      this.RightPorts = new Collection<TopologyDevicePort>();
+      this.TopPorts = new Collection<TopologyDevicePort>();
     }
 
-    public ICollection<TopologyDevicePort> BottomtArray { get; set; }
+    public TopologyDevicePort BottomPort { get; set; }
+
+    public string BottomPortId { get; set; }
+
+    public ICollection<TopologyDevicePort> BottomPorts { get; set; }
 
     [Key]
     public string Key { get; set; }
 
-    public ICollection<TopologyDevicePort> LeftArray { get; set; }
+    public TopologyDevicePort LeftPort { get; set; }
+    public string LeftPortId { get; set; }
+    public ICollection<TopologyDevicePort> LeftPorts { get; set; }
     public string Loc { get; set; }
     public string Name { get; set; }
-    public ICollection<TopologyDevicePort> RightArray { get; set; }
-    public ICollection<TopologyDevicePort> TopArray { get; set; }
+    public TopologyDevicePort RightPort { get; set; }
+    public string RightPortId { get; set; }
+    public ICollection<TopologyDevicePort> RightPorts { get; set; }
+    public TopologyDevicePort TopPort { get; set; }
+    public string TopPortId { get; set; }
+    public ICollection<TopologyDevicePort> TopPorts { get; set; }
   }
 }

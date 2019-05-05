@@ -29,8 +29,9 @@ namespace TopoEditNetCore.REST.Persistence
       var result = new List<Topology>();
 
       var query = context.Topologies
-          .Include(na => na.NodeData)
-        // .ThenInclude(m => m)
+          .Include(t => t.NodeData)
+          .Include(t => t.NodeData)
+         .ThenInclude(n => n.TopPort)
         .AsQueryable();
 
       var columnsMap = new Dictionary<string, Expression<Func<Topology, object>>>()

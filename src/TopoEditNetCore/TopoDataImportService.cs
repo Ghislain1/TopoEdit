@@ -55,6 +55,34 @@ namespace TopoEditNetCore
         topologyModel.NodeData = nodeModel;
         topologyModel.NodeDataId = nodeModel.Key;
 
+        foreach (var leftPort in nodeModel.LeftPorts)
+        {
+          topologyModel.NodeData.LeftPort = leftPort;
+          topologyModel.NodeData.LeftPortId = leftPort.Key;
+          this.topoEditContext.TopologyDevicePorts.Add(leftPort);
+          this.topoEditContext.SaveChanges();
+        }
+        foreach (var rightPort in nodeModel.RightPorts)
+        {
+          topologyModel.NodeData.RightPort = rightPort;
+          topologyModel.NodeData.RightPortId = rightPort.Key;
+          this.topoEditContext.TopologyDevicePorts.Add(rightPort);
+          this.topoEditContext.SaveChanges();
+        }
+        foreach (var topoPort in nodeModel.TopPorts)
+        {
+          topologyModel.NodeData.TopPort = topoPort;
+          topologyModel.NodeData.TopPortId = topoPort.Key;
+          this.topoEditContext.TopologyDevicePorts.Add(topoPort);
+          this.topoEditContext.SaveChanges();
+        }
+        foreach (var leftPort in nodeModel.LeftPorts)
+        {
+          topologyModel.NodeData.LeftPort = leftPort;
+          topologyModel.NodeData.LeftPortId = leftPort.Key;
+          this.topoEditContext.TopologyDevicePorts.Add(leftPort);
+          this.topoEditContext.SaveChanges();
+        }
         this.topoEditContext.NodeDataArray.Add(nodeModel);
         this.topoEditContext.SaveChanges();
       }

@@ -6,18 +6,18 @@ namespace TopoEditNetCore.REST.DTos
   {
     public NodeDataDto()
     {
-      this.LeftArray = new List<TopologyDevicePortDto>();
-      this.BottomtArray = new List<TopologyDevicePortDto>();
-      this.RightArray = new List<TopologyDevicePortDto>();
-      this.TopArray = new List<TopologyDevicePortDto>();
+      this.LeftPorts = new List<TopologyDevicePortDto>();
+      this.BottomPorts = new List<TopologyDevicePortDto>();
+      this.RightPorts = new List<TopologyDevicePortDto>();
+      this.TopPorts = new List<TopologyDevicePortDto>();
     }
 
-    public List<TopologyDevicePortDto> BottomtArray { get; set; }
+    public List<TopologyDevicePortDto> BottomPorts { get; set; }
     public string Key { get; set; }
-    public virtual IList<TopologyDevicePortDto> LeftArray { get; set; }
+    public virtual IList<TopologyDevicePortDto> LeftPorts { get; set; }
     public string Loc { get; set; }
     public string Name { get; set; }
-    public virtual IList<TopologyDevicePortDto> RightArray { get; set; }
-    public virtual IList<TopologyDevicePortDto> TopArray { get; set; }
+    public virtual IList<TopologyDevicePortDto> RightPorts { get; set; }
+    public virtual IList<TopologyDevicePortDto> TopPorts { get; set; }
   }
 }
