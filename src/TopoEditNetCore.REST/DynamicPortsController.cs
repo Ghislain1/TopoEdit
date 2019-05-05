@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
+using TopoEditNetCore.REST.Datacontext;
 using TopoEditNetCore.REST.Persistence;
 
 namespace TopoEditNetCore.REST
@@ -21,11 +22,12 @@ namespace TopoEditNetCore.REST
     private readonly IDynamicPortRepository repository;
     private readonly IUnitOfWork unitOfWork;
 
-    //public DynamicPortsController(IMapper mapper, IConfiguration configuration)
-    //{
-    //  this.mapper = mapper;
-    //  this.configuration = configuration;
-    //}
+    public DynamicPortsController(IMapper mapper, IConfiguration configuration, TopoEditContext topoEditContext)
+    {
+      this.mapper = mapper;
+      this.configuration = configuration;
+      string isSqLite = this.configuration["data:useSqLite"];
+    }
 
     // GET api/values
     [HttpGet]
