@@ -8,7 +8,7 @@ namespace TopoEditNetCore.REST.Models
   {
     public NodeData()
     {
-      this.LeftPorts = new Collection<TopologyDevicePort>();
+      this.LeftArray = new Collection<TopologyDevicePort>();
       this.BottomPorts = new Collection<TopologyDevicePort>();
       this.RightPorts = new Collection<TopologyDevicePort>();
       this.TopPorts = new Collection<TopologyDevicePort>();
@@ -23,9 +23,9 @@ namespace TopoEditNetCore.REST.Models
     [Key]
     public string Key { get; set; }
 
+    public ICollection<TopologyDevicePort> LeftArray { get; set; }
     public TopologyDevicePort LeftPort { get; set; }
     public string LeftPortId { get; set; }
-    public ICollection<TopologyDevicePort> LeftPorts { get; set; }
     public string Loc { get; set; }
     public string Name { get; set; }
     public TopologyDevicePort RightPort { get; set; }

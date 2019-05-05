@@ -28,10 +28,16 @@ namespace TopoEditNetCore.REST.Persistence
     {
       var result = new List<Topology>();
 
+      //Expression<Func<NodeData, IList<TopologyDevicePort>>> navigationPropertyPath = dda => { dda.BottomPort };
+
       var query = context.Topologies
+          .Include(t => t.LinkDataArray)
+          .Include(t => t.NodeDataArray)
           .Include(t => t.NodeData)
-          .Include(t => t.NodeData)
-         .ThenInclude(n => n.TopPort)
+          .ThenInclude(ioi => ioi.BottomPorts)
+           .Include(ioi => ioi.NodeData)
+            .ThenInclude(ioi => ioi.LeftArray)
+
         .AsQueryable();
 
       var columnsMap = new Dictionary<string, Expression<Func<Topology, object>>>()

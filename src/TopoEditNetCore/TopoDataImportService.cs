@@ -55,11 +55,14 @@ namespace TopoEditNetCore
         topologyModel.NodeData = nodeModel;
         topologyModel.NodeDataId = nodeModel.Key;
 
-        foreach (var leftPort in nodeModel.LeftPorts)
+        this.topoEditContext.TopologyDevices.Add(nodeModel);
+        this.topoEditContext.SaveChanges();
+
+        foreach (var bottomPort in nodeModel.BottomPorts)
         {
-          topologyModel.NodeData.LeftPort = leftPort;
-          topologyModel.NodeData.LeftPortId = leftPort.Key;
-          this.topoEditContext.TopologyDevicePorts.Add(leftPort);
+          topologyModel.NodeData.BottomPort = bottomPort;
+          topologyModel.NodeData.BottomPortId = bottomPort.Key;
+          this.topoEditContext.TopologyDevicePorts.Add(bottomPort);
           this.topoEditContext.SaveChanges();
         }
         foreach (var rightPort in nodeModel.RightPorts)
@@ -76,15 +79,13 @@ namespace TopoEditNetCore
           this.topoEditContext.TopologyDevicePorts.Add(topoPort);
           this.topoEditContext.SaveChanges();
         }
-        foreach (var leftPort in nodeModel.LeftPorts)
+        foreach (var leftPort in nodeModel.LeftArray)
         {
           topologyModel.NodeData.LeftPort = leftPort;
           topologyModel.NodeData.LeftPortId = leftPort.Key;
-          this.topoEditContext.TopologyDevicePorts.Add(leftPort);
+          // this.topoEditContext.TopologyDevicePorts.Add(leftPort);
           this.topoEditContext.SaveChanges();
         }
-        this.topoEditContext.NodeDataArray.Add(nodeModel);
-        this.topoEditContext.SaveChanges();
       }
 
       //Add all links to datatbase
@@ -93,7 +94,7 @@ namespace TopoEditNetCore
         topologyModel.LinkData = linkModel;
         topologyModel.LinkDataId = linkModel.Key;
 
-        this.topoEditContext.LinkDataArray.Add(linkModel);
+        this.topoEditContext.TopologyDeviceLinks.Add(linkModel);
         this.topoEditContext.SaveChanges();
       }
       this.topoEditContext.Topologies.Add(topologyModel);
