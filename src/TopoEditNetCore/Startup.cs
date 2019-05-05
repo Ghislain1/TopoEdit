@@ -16,8 +16,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json.Serialization;
-using TopoEditNetCore.Mapping;
+
 using TopoEditNetCore.REST.Datacontext;
+using TopoEditNetCore.REST.Persistence;
+using TopoEditNetCore.REST.Services;
 
 namespace TopoEditNetCore
 {
@@ -34,7 +36,7 @@ namespace TopoEditNetCore
     public IConfiguration Configuration { get; }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider services)
     {
       if (env.IsDevelopment())
       {
@@ -51,6 +53,11 @@ namespace TopoEditNetCore
       app.UseMvc();
       string useSqLite = Configuration["Data:useSqLite"];
       Console.WriteLine(useSqLite == "true" ? "SqLite" : "Sql Server");
+
+      // Ensure data
+      ITopoDataImportService topoDataImportService = (ITopoDataImportService)services.GetService<ITopoDataImportService>();
+      var filePath = Path.Combine(env.ContentRootPath, "topoData.json");
+      topoDataImportService.EnsureTopoData(filePath);
     }
 
     // This method gets called by the runtime. Use this method to add services to the container.
@@ -60,6 +67,10 @@ namespace TopoEditNetCore
 
       //Support auto Mappper
       services.AddAutoMapper(typeof(Startup));
+
+      //Support own services
+      services.AddScoped<ITopoDataImportService, TopoDataImportService>();
+      services.AddTransient<ITopologyRepository, TopologyRepository>();
 
       services.AddDbContext<TopoEditContext>(builder =>
       {

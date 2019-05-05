@@ -7,6 +7,6 @@ namespace TopoEditNetCore.REST.Services
 {
   public interface ITopoDataImportService
   {
-    void EnsureTopoData(TopoEditContext topoEditContext, string filePath);
+    bool EnsureTopoData(string filePath);
   }
 }

@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using TopoEditNetCore.REST.Models;
 
 namespace TopoEditNetCore.REST.Datacontext
 {
@@ -11,9 +12,16 @@ namespace TopoEditNetCore.REST.Datacontext
     {
     }
 
+    public DbSet<TopologyDevicePort> BottomPorts { get; set; }
     public string ConnectionString { get; set; }
-    public DbSet<Object> LinkDataArray { get; set; }
-    public DbSet<Object> NodeDataArray { get; set; }
+    public DbSet<TopologyDevicePort> LeftPorts { get; set; }
+    public DbSet<LinkData> LinkDataArray { get; set; }
+
+    public DbSet<NodeData> NodeDataArray { get; set; }
+    public DbSet<TopologyDevicePort> RightPorts { get; set; }
+    public DbSet<Topology> Topologies { get; set; }
+
+    public DbSet<TopologyDevicePort> TopPorts { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
