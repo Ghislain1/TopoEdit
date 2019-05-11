@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GojsService } from '../../../shared/services/gojs.service';
+import { DiagramModel } from '../../../shared/api/backend.result';
 
 @Component({
   selector: 'app-dynamic-ports',
@@ -7,10 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DynamicPortsComponent implements OnInit {
   myDate: Date;
-  constructor() { }
+
+  diagramModels: DiagramModel[];
+
+
+  constructor(
+    private gojsService: GojsService
+  ) { }
 
   ngOnInit() {
     this.myDate = new Date();
   }
-
+  getDynamicPorts(): void {
+    this.gojsService.getDynamicPorts()
+      .subscribe(diagramModels => this.diagramModels = diagramModels);
+  }
 }

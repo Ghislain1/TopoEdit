@@ -54,6 +54,15 @@ namespace TopoEditNetCore
       string useSqLite = Configuration["Data:useSqLite"];
       Console.WriteLine(useSqLite == "true" ? "SqLite" : "Sql Server");
 
+      //Use spa
+      app.UseSpa(confi =>
+      {
+        if (env.IsDevelopment())
+        {
+          confi.UseProxyToSpaDevelopmentServer("http://localhost:50001/");
+        }
+      });
+
       // Ensure data
       ITopoDataImportService topoDataImportService = (ITopoDataImportService)services.GetService<ITopoDataImportService>();
       var filePath = Path.Combine(env.ContentRootPath, "topoData.json");
